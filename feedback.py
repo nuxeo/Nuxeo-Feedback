@@ -30,18 +30,22 @@ class Feedback(db.Model):
     id = db.Column('feedback_id', db.Integer, primary_key=True)
     kind = db.Column(db.Integer)
     text = db.Column(db.String(1000))
+    product = db.Column(db.String(40))
     version = db.Column(db.String(40))
+    ip_addr = db.Column(db.String(20))
     pub_date = db.Column(db.DateTime)
 
     UNHAPPY = -1
     HAPPY = 1
     KINDS = {'unhappy': UNHAPPY, 'happy': HAPPY}
 
-    def __init__(self, kind, text, version):
+    def __init__(self, kind, text, product, version, ip_addr):
         assert kind in (self.UNHAPPY, self.HAPPY)
         self.kind = kind
         self.text = u' '.join(text.split())
+        self.product = product
         self.version = version
+        self.ip_addr = ip_addr
         self.pub_date = datetime.utcnow()
 
     @property
@@ -61,6 +65,7 @@ class Feedback(db.Model):
             'kind':     self.kind_symbol,
             'text':     self.text,
             'version':  self.version,
+            'product':  self.product,
             'pub_date': self.pub_date.strftime('%Y-%m-%dT%H:%M:%SZ')
         }
 
@@ -96,11 +101,13 @@ def give_feedback():
         challenge = session.pop('challenge', None)
         kind = Feedback.KINDS.get(request.form['kind'])
         text = request.form['feedback']
+        product = request.form['product']
         version = request.form['version']
+        ip_addr = request.remote_addr
         if challenge and challenge_response_accepted(
                 challenge, request.form['response']) and \
            kind is not None and len(text) <= 140 and len(version) <= 20:
-            feedback = Feedback(kind, text, version)
+            feedback = Feedback(kind, text, product, version, ip_addr)
             db.session.add(feedback)
             db.session.commit()
             return redirect(url_for('show_message', id=feedback.id))

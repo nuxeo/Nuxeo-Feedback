@@ -21,6 +21,10 @@ def dropdb():
     db.drop_all()
     print 'All tables dropped'
 
+@manager.command
+def run():
+    app.run(debug=False, threaded=True)
+
 
 if __name__ == '__main__':
     manager.run()

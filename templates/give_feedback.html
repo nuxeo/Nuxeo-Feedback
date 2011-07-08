@@ -3,14 +3,14 @@
 {% block body %}
   <h2>We Love Feedback</h2>
   <p>
-    Are you happy with <a href=http://flask.pocoo.org/>Flask</a>?  Or is
+    Are you happy with the <a href=http://community.nuxeo.com/>Nuxeo project</a>?  Or is
     something not right?  We would love to hear your opinion about your
-    experience with Flask in 140 characters or less so that we can
+    experience with Nuxeo EP or one of the Nuxeo products in 140 characters or less so that we can
     become better.
   <form action="" method=post class=feedback>
     <ul>
       <li id=step-1>
-        Flask makes me <span class=selectors>
+        Nuxeo EP makes me <span class=selectors>
           <span class=kind-selector><a href=# class=happy>happy</a></span> /
           <span class=kind-selector><a href=# class=unhappy>unhappy</a></span>
         </span> because …
@@ -19,7 +19,17 @@
       <li id=step-3>
         <p class=version>
           <input class=submit type=submit value="Share this">
-          BTW. I am using Flask Version <input type=text name=version>
+          BTW. I am using Nuxeo
+          <select name=product>
+            <option value="">...</option>
+            <option value="EP">EP</option>
+            <option value="DM">DM</option>
+            <option value="DAM">DAM</option>
+            <option value="CMF">CMF</option>
+            <option value="Studio">Studio</option>
+            <option value="Marketplace">Marketplace</option>
+          </select>,<br>
+          version <input type=text name=version>
     </ul>
     <div class=hidden>
       <input type=hidden name=kind>

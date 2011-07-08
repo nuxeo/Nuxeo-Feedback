@@ -7,6 +7,6 @@
     <h2>“{{ feedback.text }}”</h2>
     <p class=meta>
       written on {{ feedback.pub_date.strftime('%Y-%m-%d at %H:%M') }}
-      {% if feedback.version %}about Flask-{{ feedback.version }}{% endif %}
+      {% if feedback.version %}about Nuxeo-{{ feedback.version }}{% endif %}
   </div>
 {% endblock %}

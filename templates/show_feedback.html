@@ -12,7 +12,7 @@
       <p class=text><q>{{ feedback.text }}</q>
       <p class=meta>—
         written on {{ feedback.pub_date.strftime('%Y-%m-%d at %H:%M') }}
-        {% if feedback.version %}about Flask-{{ feedback.version }}{% endif %}
+        {% if feedback.version %}about Nuxeo-{{ feedback.version }}{% endif %}
         <a href={{ url_for('show_message', id=feedback.id) }}>#</a>
   {%- endfor %}
   </ul>

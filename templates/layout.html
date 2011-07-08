@@ -1,11 +1,11 @@
 <!doctype html>
-<title>{% block title %}{% endblock %} | Flask Feedback</title>
+<title>{% block title %}{% endblock %} | Nuxeo Feedback</title>
 <link href={{ url_for('static', filename='style.css') }} rel=stylesheet type=text/css>
 <script type=text/javascript src=https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js></script>
 <script type=text/javascript src={{ url_for('static', filename='script.js') }}></script>
 <div class=box>
   <div class=header>
-    <h1><span>Flask Feedback</span></h1>
+    <h1><span>Nuxeo Feedback</span></h1>
     <ul class=nav>
     {%- for endpoint, title in [
         ('give_feedback', 'Give Feedback'),
@@ -20,7 +20,9 @@
   <div class=body>{% block body %}{% endblock %}</div>
   <div class=footer>
     <p>
-      &copy; Copyright 2011 by <a href=http://lucumr.pocoo.org/>Armin Ronacher</a>
+      &copy; Copyright 2011 <a href="http://www.nuxeo.com/en">Nuxeo SA</a><br>
+      Based on the by Flask-Feedback project by
+      <a href=http://lucumr.pocoo.org/>Armin Ronacher</a>
       and the Flask Team.<br>
       Get the raw data as <a href={{ url_for('export_text') }}>text</a> or
       <a href={{ url_for('export_json') }}>json</a> for playing around.
