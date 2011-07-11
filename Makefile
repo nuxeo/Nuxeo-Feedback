@@ -1,7 +1,7 @@
 run: env feedback.db
 	./env/bin/python manage.py run
 
-env:
+env: requirements.txt
 	virtualenv env
 	pip install --upgrade -s -E env -r requirements.txt
 
@@ -10,10 +10,11 @@ feedback.db: env
 
 clean:
 	find . -name "*.pyc" | xargs rm -f
+	rm -rf tmp
 
 superclean:
 	rm -rf env feedback.db
 
 push:
-	rsync -e ssh -avz * root@styx.nuxeo.com:/var/www/nuxeo-feedback/
+	fab deploy
 

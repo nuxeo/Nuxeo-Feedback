@@ -1,3 +1,5 @@
 settings-prod.cfg
 *.pyc
 .idea
+env
+tmp
