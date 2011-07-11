@@ -1,3 +1,5 @@
-Flask-Feedback
+Nuxeo-Feedback
 
-   The application for feedback.flask.pocoo.org
+   Feedback about Nuxeo.
+
+   Based on Flask-Feedback (http://feedback.flask.pocoo.org/).

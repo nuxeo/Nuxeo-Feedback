@@ -1,2 +1,3 @@
-settings.cfg
+settings-prod.cfg
 *.pyc
+.idea
