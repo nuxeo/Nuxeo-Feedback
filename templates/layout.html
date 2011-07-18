@@ -5,28 +5,30 @@
 <script type=text/javascript src=https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js></script>
 <script type=text/javascript src={{ url_for('static', filename='script.js') }}></script>
 <div class=wrap>
-  <div class=header>
-    <a href="/" title="Return to the homepage" id="logo">
-      <img src="/static/logo.png" alt="Nuxeo logo" />
-    </a>
-  </div>
-  <div class="content">
-    <div class="nav">
-      <ul class=nav>
-      {%- for endpoint, title in [
-          ('give_feedback', 'Give Feedback'),
-          ('happy', 'What people like'),
-          ('unhappy', 'Where we improve')
-       ] %}
-        <li{% if endpoint == request.endpoint %} class=active{% endif
-          %}><a href={{ url_for(endpoint) }}>{{ title }}</a>
-      {%- endfor %}
-      </ul>
+  <div class=box>
+    <div class=header>
+      <a href="/" title="Return to the homepage" id="logo">
+        <img src="/static/logo.png" alt="Nuxeo logo" />
+      </a>
     </div>
-	  <div class=main>
-      {% block body %}{% endblock %}
+    <div class="content">
+      <div class="nav">
+        <ul class=nav>
+        {%- for endpoint, title in [
+            ('give_feedback', 'Give Feedback'),
+            ('happy', 'What people like'),
+            ('unhappy', 'Where we improve')
+         ] %}
+         <li{% if endpoint == request.endpoint %} class=active{% endif%}>
+           <a href={{ url_for(endpoint) }}>{{ title }}</a>
+        {%- endfor %}
+        </ul>
+      </div>
+	    <div class=main>
+        {% block body %}{% endblock %}
+	    </div>
 	  </div>
-	</div>
+  </div>
 </div>
 <div class=footer>
   <p>

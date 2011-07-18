@@ -2,7 +2,6 @@
 html, body   { background-color: #f3f7ff; font-family: 'Amaranth', sans-serif; font-size: 17px; color: #000; height: 100%; margin: 0 }
 a            { color: #0097ad; text-decoration: none }
 a:hover      { color: #00c0cc }
-.box         { width: 540px; margin: 40px auto }
 h1, h2       { font-size: 36px; margin: 0 0 5px 0 }
 h1, h2, h3   { font-weight: normal }
 h3           { font-size: 30px; margin: 15px 0 5px 0 }
