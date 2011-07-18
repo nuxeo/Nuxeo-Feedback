@@ -63,7 +63,7 @@ function makeFeedbackBox(feedback) {
         nextStep.slideUp('fast');
     });
   charsLeft = $('<span class=chars-left></span>')
-    .insertBefore(feedbackInput)
+    .insertAfter(feedbackInput)
     .hide();
   feedback.animate({height: 'show', opacity: 'show'});
 

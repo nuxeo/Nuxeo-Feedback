@@ -1,8 +1,8 @@
 {% extends 'layout.html' %}
 {% block title %}Give Feedback{% endblock %}
 {% block body %}
-  <h2>We Love Feedback</h2>
-  <p>
+  <h1>We Love Feedback</h1>
+  <p class="intro">
     Are you happy with the <a href=http://community.nuxeo.com/>Nuxeo project</a>?  Or is
     something not right?  We would love to hear your opinion about your
     experience with Nuxeo EP or one of the Nuxeo products in 140 characters or less so that we can
@@ -18,7 +18,6 @@
         <p class=text><textarea name=feedback cols=50 rows=2></textarea>
       <li id=step-3>
         <p class=version>
-          <input class=submit type=submit value="Share this">
           BTW. I am using Nuxeo
           <select name=product>
             <option value="">...</option>
@@ -28,8 +27,9 @@
             <option value="CMF">CMF</option>
             <option value="Studio">Studio</option>
             <option value="Marketplace">Marketplace</option>
-          </select>,<br>
+          </select>&nbsp;,
           version <input type=text name=version>
+          <p class="action"><input class=submit type=submit value="Share this">
     </ul>
     <div class=hidden>
       <input type=hidden name=kind>
