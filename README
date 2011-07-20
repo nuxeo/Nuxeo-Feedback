@@ -1,5 +1,19 @@
 Nuxeo-Feedback
+==============
 
-   Feedback about Nuxeo.
+About
+-----
 
-   Based on Flask-Feedback (http://feedback.flask.pocoo.org/).
+Feedback about Nuxeo.
+
+Based on Flask-Feedback (http://feedback.flask.pocoo.org/).
+
+Install
+-------
+
+"make" should be enough, provided you have installed:
+
+- python
+- virtualenv
+- pip
+

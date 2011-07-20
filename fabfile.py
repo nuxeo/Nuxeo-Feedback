@@ -17,8 +17,9 @@ def deploy():
     pack()
     put('tmp/nuxeo-feedback.tgz', '/tmp/')
     with cd('/var/www/nuxeo-feedback'):
-        run("cp feedback.db ../feedback.db-%d" % int(time.time()))
+        run("cp feedback.db ../backup/feedback.db-%d" % int(time.time()))
         run('tar xzf /tmp/nuxeo-feedback.tgz')
-        run("make env")
+        run("make env feedback.db")
         run('mv settings-prod.cfg settings.cfg')
         run('touch /var/www/wsgi-scripts/feedback.wsgi')
+        run("chown -R www-data.www-data .")

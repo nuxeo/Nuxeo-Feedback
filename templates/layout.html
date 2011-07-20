@@ -1,14 +1,17 @@
 <!doctype html>
+<head>
 <title>{% block title %}{% endblock %} | Nuxeo Feedback</title>
 <link href={{ url_for('static', filename='style.css') }} rel=stylesheet type=text/css>
 <link href='http://fonts.googleapis.com/css?family=Amaranth&v2' rel='stylesheet' type='text/css'>
 <script type=text/javascript src=https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js></script>
 <script type=text/javascript src={{ url_for('static', filename='script.js') }}></script>
+</head>
+<body>
 <div class=wrap>
   <div class=box>
     <div class=header>
       <a href="/" title="Return to the homepage" id="logo">
-        <img src="/static/logo.png" alt="Nuxeo logo" />
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Nuxeo logo" />
       </a>
     </div>
     <div class="content">
@@ -17,7 +20,7 @@
         {%- for endpoint, title in [
             ('give_feedback', 'Give Feedback'),
             ('happy', 'What people like'),
-            ('unhappy', 'Where we improve')
+            ('unhappy', 'Where we need to improve')
          ] %}
          <li{% if endpoint == request.endpoint %} class=active{% endif%}>
            <a href={{ url_for(endpoint) }}>{{ title }}</a>
@@ -40,3 +43,5 @@
     <a href={{ url_for('export_json') }}>json</a> for playing around.
     <a href={{ url_for('faq') }}>faq</a>
 </div>
+</body>
+</html>

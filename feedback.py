@@ -146,10 +146,11 @@ def export_text(version):
     if version != 'all':
         q = q.filter_by(version=version)
     messages = q.order_by(Feedback.pub_date).all()
-    return Response(u'\n'.join('[%s] %s: %s (Flask-%s)' % (
+    return Response(u'\n'.join('[%s] %s: %s (%s-%s)' % (
         fb.kind_symbol,
         fb.pub_date.strftime('%Y-%m-%dT%H:%M:%SZ'),
         fb.text,
+        fb.product,
         fb.version or 'unknown'
     ) for fb in messages), mimetype='text/plain')
 
@@ -161,4 +162,6 @@ def export_json(version):
     if version != 'all':
         q = q.filter_by(version=version)
     messages = q.order_by(Feedback.pub_date).all()
+    for msg in messages:
+        del msg.ip_addr
     return jsonify(messages=[fb.to_json() for fb in messages])
