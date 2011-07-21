@@ -17,6 +17,7 @@ from random import SystemRandom
 from flask import Flask, render_template, session, request, \
      url_for, redirect, Response, jsonify
 from flaskext.sqlalchemy import SQLAlchemy
+from werkzeug.contrib.atom import AtomFeed
 
 
 app = Flask(__name__)
@@ -165,3 +166,23 @@ def export_json(version):
     for msg in messages:
         del msg.ip_addr
     return jsonify(messages=[fb.to_json() for fb in messages])
+
+@app.route('/feedback.rss')
+def export_rss():
+    q = Feedback.query
+    messages = q.order_by(Feedback.pub_date.desc()).limit(15)
+    feed = AtomFeed("Nuxeo Feedback Feed", feed_url=request.url,
+                    url=request.host_url)
+    for msg in messages:
+        if msg.kind == Feedback.HAPPY:
+            title = "Happy user says..."
+        else:
+            title = "Unhappy user says..."
+        content = msg.text.strip() + "\n\n"
+        content += "For product: %s version: %s" % (msg.product, msg.version)
+        url = url_for('show_message', id=msg.id)
+        id = url
+        feed.add(title=title, content=content, content_type='text/plain',
+                 url=url, id=id, updated=msg.pub_date, published=msg.pub_date)
+    return feed.get_response()
+
