@@ -2,6 +2,7 @@
 <head>
 <title>{% block title %}{% endblock %} | Nuxeo Feedback</title>
 <link href={{ url_for('static', filename='style.css') }} rel=stylesheet type=text/css>
+<link href="http://www.nuxeo.com/var/storage/community/community_common.css" rel=stylesheet type=text/css>
 <link href='http://fonts.googleapis.com/css?family=Amaranth&v2' rel='stylesheet' type='text/css'>
 <script type=text/javascript src=https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js></script>
 <script type=text/javascript src={{ url_for('static', filename='script.js') }}></script>
@@ -33,15 +34,88 @@
 	  </div>
   </div>
 </div>
-<div class=footer>
-  <p>
-    &copy; Copyright 2011 <a href="http://www.nuxeo.com/en">Nuxeo SA</a><br>
-    Based on the by Flask-Feedback project by
-    <a href=http://lucumr.pocoo.org/>Armin Ronacher</a>
-    and the Flask Team.<br>
-    Get the raw data as <a href={{ url_for('export_text') }}>text</a> or
-    <a href={{ url_for('export_json') }}>json</a> for playing around.
-    <a href={{ url_for('faq') }}>FAQ</a>
+
+<div style="clear:both;"></div> 
+ 
+<div class="foot"> 
+  <div class="FooterContainer"> 
+    <div class="FootLinks"> 
+      <ul> 
+        <li><h6>More</h6> 
+          <ul> 
+            <li><a href="http://doc.nuxeo.com/">documentation</a> 
+            </li> 
+            <li><a href="http://blogs.nuxeo.com/">blogs</a> 
+            </li> 
+            <li> 
+              <a href="http://www.nuxeo.com/en/resources/videos-on-demand">videos</a></li> 
+          </ul> 
+        </li> 
+      </ul> 
+      <ul> 
+        <li><h6>About Nuxeo</h6> 
+          <ul> 
+            <li><a href="http://www.nuxeo.com/">nuxeo.com</a> 
+            </li> 
+            <li><a href="http://www.nuxeo.org/">community</a> 
+            </li> 
+            <li><a href="http://www.nuxeo.com/en/about/careers">jobs</a></li> 
+          </ul> 
+        </li> 
+      </ul> 
+      <ul> 
+        <li><h6>Our products</h6> 
+          <ul> 
+            <li><a href="http://www.nuxeo.com/en/products/document-management"
+                    >Document Management (DM)</a></li> 
+            <li><a href="http://www.nuxeo.com/en/products/dam"
+                    >Digital Asset Management (DAM)</a></li> 
+            <li><a href="http://www.nuxeo.com/en/products/case-management"
+                    >Case Management Framework (CMF)</a></li> 
+          </ul> 
+        </li> 
+      </ul> 
+      <ul> 
+        <li><h6>Our services</h6> 
+          <ul> 
+            <li><a href="http://www.nuxeo.com/en/subscription/connect">support</a></li> 
+               <!-- was: nuxeo <span class="connect">•</span> Connect --> 
+            <li><a href="http://www.nuxeo.com/en/services/training">training</a></li> 
+            <li><a href="http://www.nuxeo.com/en/services/consulting">consulting</a></li> 
+          </ul> 
+        </li> 
+      </ul> 
+      <ul> 
+        <li><h6>Follow us</h6> 
+          <ul> 
+            <li><a rel="nofollow" href="http://twitter.com/nuxeo"
+                   onclick="_gaq.push(['_trackEvent', 'Social', 'Twitter', 'Go to Twitter page'])"
+                ><span class="twitter">twitter</span> /nuxeo</a></li> 
+            <li> 
+              <a rel="nofollow" href="http://www.linkedin.com/groupsDirectory?itemaction=mclk&amp;anetid=43314&amp;impid=&amp;pgkey=anet_search_results&amp;actpref=anetsrch_name&amp;trk=anetsrch_name&amp;goback=%2Egdr_1288215250735_1"
+                 onclick="_gaq.push(['_trackEvent', 'Social', 'LinkedIn', 'Go to LinkedIn group page'])"
+                ><span class="linkedIn">linkedIn</span> /Nuxeo
+                Community</a></li> 
+            <li> 
+              <a rel="nofollow" href="http://www.facebook.com/group.php?gid=5568495138"
+                 onclick="_gaq.push(['_trackEvent', 'Social', 'FaceBook', 'Go to FaceBook group page'])"
+                ><span class="facebook">facebook</span> /Nuxeo
+                Users</a></li> 
+          </ul> 
+        </li> 
+      </ul> 
+    </div> 
+    <div class="Contact"> 
+        &copy; Copyright 2011 <a href="http://www.nuxeo.com/en">Nuxeo SA</a><br>
+        Based on the by Flask-Feedback project by
+        <a href=http://lucumr.pocoo.org/>Armin Ronacher</a>
+        and the Flask Team.<br>
+        Get the raw data as <a href={{ url_for('export_text') }}>text</a> or
+        <a href={{ url_for('export_json') }}>json</a> for playing around.
+        <a href={{ url_for('faq') }}>FAQ</a>
+    </div> 
+  </div> 
 </div>
+
 </body>
 </html>

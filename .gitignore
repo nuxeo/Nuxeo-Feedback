@@ -3,3 +3,4 @@ settings-prod.cfg
 .idea
 env
 tmp
+feedback.db
