@@ -1,5 +1,5 @@
 /* general style */
-html, body   { background-color: #f3f7ff; font-family: 'Amaranth', sans-serif; font-size: 17px; color: #000; height: 100%; margin: 0 }
+html, body   { background-color: #f3f7ff; font-family: 'Amaranth', sans-serif; font-size: 17px; color: #000; margin: 0 }
 a            { color: #0097ad; text-decoration: none }
 a:hover      { color: #00c0cc }
 h1, h2       { font-size: 36px; margin: 0 0 5px 0 }
@@ -7,7 +7,6 @@ h1, h2, h3   { font-weight: normal }
 h3           { font-size: 30px; margin: 15px 0 5px 0 }
 p            { color: #666; font: 400 14px/24px Georgia, Helvetica ,sans-serif; line-height: 1.4 }
 .header      { padding: 5px }
-.wrap    		 { min-height: 100%; height: auto !important; height: 100% }
 .content     { margin: 40px auto 10px; max-width: 900px }
 .main        {  background-color: #fff; border-bottom: 2px solid #30CEE5; float: left; margin: 10px auto 50px; overflow: auto; padding: 30px 50px; max-width: 500px; width: 95% }
 .main:after  { clear: both }
@@ -70,6 +69,3 @@ p            { color: #666; font: 400 14px/24px Georgia, Helvetica ,sans-serif; 
 dl.qa dt        { margin: 25px 0 0 }
                   
 /* Footer */
-.footer       { background-color: #343434; color: #7b7b7b; font-size: 13px;text-align: center; position: relative; height: 100px; margin-top: -100px; clear:both }
-.footer a     { color: #a5a5a5 }
-.footer p     { font-family: 'Amaranth', sans-serif; margin: 0; padding-top: 15px }
