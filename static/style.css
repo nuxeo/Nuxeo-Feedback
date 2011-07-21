@@ -62,7 +62,7 @@ p            { color: #666; font: 400 14px/24px Georgia, Helvetica ,sans-serif; 
 
 /* single message */
 .message            { margin: 30px 0 }
-.message h2         { font-style: italic; font-size: 46px; text-align: center }
+.message h2         { font-style: italic; font-size: 30px; text-align: center }
 .message .meta      { color: #666; margin-top: 30px; text-align: right }
 .message p.kind     { margin: 15px 0 30px 0; font-size: 20px }
 
